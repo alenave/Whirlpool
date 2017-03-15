@@ -23,6 +23,7 @@ public class ClusteringActivity extends BaseActivity {
         getMap().moveCamera(CameraUpdateFactory.newLatLngZoom(yourLocation, 12));
 
         mClusterManager = new ClusterManager<Item>(this, getMap());
+        getMap().setOnCameraIdleListener(mClusterManager);
         try {
             readItems();
         } catch (JSONException e) {

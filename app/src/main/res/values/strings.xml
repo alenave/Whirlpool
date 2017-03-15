@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Marker Cluster</string>
+    <string name="app_name">Cluster-Google Api</string>
     <string name="Cancel">Cancel</string>
     <string name="gps_network_not_enabled">GPS not enabled</string>
     <string name="open_location_settings">Open location settings</string>
