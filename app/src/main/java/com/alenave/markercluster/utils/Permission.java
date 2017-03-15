@@ -25,6 +25,8 @@ public class Permission {
                 != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(activity,
                     new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+        } else {
+            LocationOn.getInstance(activity).check();
         }
     }
 }

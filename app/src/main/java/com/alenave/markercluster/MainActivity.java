@@ -56,14 +56,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 break;
             case R.id.cluster:
-                LocationOn.getInstance(this).check();
-                if (!numberOfMarkers.getText().toString().equalsIgnoreCase("")) {
-                    markersCounter = Integer.valueOf(numberOfMarkers.getText().toString());
-                    if (LocationOn.getInstance(this).getLatitude() > 0 && LocationOn.getInstance(this).getLongitude() > 0) {
-                        startActivity(new Intent(this, ClusteringActivity.class));
+                if (LocationOn.getInstance(this).check()) {
+                    if (!numberOfMarkers.getText().toString().equalsIgnoreCase("")) {
+                        markersCounter = Integer.valueOf(numberOfMarkers.getText().toString());
+                        if (LocationOn.getInstance(this).getLatitude() > 0 && LocationOn.getInstance(this).getLongitude() > 0) {
+                            startActivity(new Intent(this, ClusteringActivity.class));
+                        }
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Please enter number of markers", Toast.LENGTH_SHORT).show();
                     }
-                } else {
-                    Toast.makeText(getApplicationContext(), "Please enter number of markers", Toast.LENGTH_SHORT).show();
                 }
                 break;
 
